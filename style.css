@@ -1,0 +1,454 @@
+.header {
+    position: sticky;
+    width: 100%;
+    height: 6vh;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    z-index: 1;
+}
+
+.logo {
+    justify-content: left;
+    width: 30vw;
+}
+
+.menu {
+    justify-content: space-evenly;
+    /*flex-end*/
+    width: 50vw;
+    /*60vw*/
+}
+
+a {
+    display: inline-flex;
+    justify-content: space-between;
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    list-style: none;
+}
+
+ul.navigation {
+    display: flex;
+    justify-content: space-evenly;
+    /*flex-end*/
+    max-width: 50uw;
+    /*New*/
+    align-items: baseline;
+    /*New */
+}
+
+ul li {
+    display: inline-block;
+    margin: 0 10px;
+    color: black;
+    font-size: large;
+    /*New*/
+    font-weight: 600;
+}
+
+ul li a:hover {
+
+    color: blueviolet;
+    text-decoration: none;
+    /* background-color: #ccc; */
+    /*yet to be decided*/
+    border-radius: 50px;
+
+
+}
+
+button {
+    transition: 0.5s;
+    display: block;
+    border: none;
+    background: none;
+    outline: none;
+    border-radius: 50px;
+    /*New*/
+}
+
+.book {
+    display: block;
+    border: none;
+    background-color: blueviolet;
+    padding: 1vh 1.5vh;
+    color: white;
+    font-size: 1.75vh;
+    font-weight: 600;
+}
+
+#book {
+    color: white;
+    border: none;
+}
+
+#book:hover {
+    opacity: 0.8;
+}
+
+/*a:visited,link,active{
+    color:black;
+}*/
+p {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+@keyframes animatedBackground {
+    0% {
+        background-position: 0 0;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://c4.wallpaperflare.com/wallpaper/280/463/660/kurumba-maldives-tourism-pool-resort-wallpaper-preview.jpg");
+    }
+
+    50% {
+        background-position: -100% 0;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://c4.wallpaperflare.com/wallpaper/850/698/458/lankanfushi-island-vacation-travel-gili-lankanfushi-wallpaper-preview.jpg");
+    }
+
+    100% {
+        background-position: 100% 0;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1600");
+    }
+}
+
+/*@keyframes slideshow {
+    0% {
+      background-image: url("https://c4.wallpaperflare.com/wallpaper/280/463/660/kurumba-maldives-tourism-pool-resort-wallpaper-preview.jpg");
+    }
+    50%{
+        background-image: url("https://c4.wallpaperflare.com/wallpaper/850/698/458/lankanfushi-island-vacation-travel-gili-lankanfushi-wallpaper-preview.jpg");
+    }
+    
+    100%{
+    }
+  }*/
+.main {
+    display: block;
+    height: 120vh;
+    width: 100%;
+    /*background-image: url("https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1600");*/
+    /*background-repeat: no-repeat;*/
+    background-size: cover;
+    background-position: 0px 0px;
+    overflow: hidden;
+    background-repeat: repeat-y;
+    animation: animatedBackground 10s linear infinite alternate;
+    /*animation: slideshow 4s linear infinite alternate;*/
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    z-index: 1;
+}
+
+
+
+.para {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    top: 30%;
+    position: relative;
+    text-align: justify;
+    text-justify: auto;
+    font-size: 20px;
+    background-color: rgba(221, 221, 221, 0.2);
+    padding: 30px;
+    padding-right: 40px;
+    border-bottom: 2px solid whitesmoke;
+    border-top: 2px solid whitesmoke;
+
+}
+
+.hotel {
+
+    margin: auto 20px;
+    width: 30vw;
+
+}
+
+.content {
+    text-align: left;
+    padding-left: 20px;
+    border-left: 3px solid red;
+}
+
+#hotel {
+    text-align: center;
+    font-size: 40px;
+}
+
+.para p {
+    max-width: 1200px;
+}
+
+.init {
+    border-bottom: 3px solid blueviolet;
+    padding-bottom: 5px;
+    color: blueviolet;
+}
+
+.intro {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+
+}
+
+.hanuma {
+    padding: 15vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    font-size: 2vh;
+    width: 40vw;
+    height: 12vh;
+    background-color: whitesmoke;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9), 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    top: -30vh;
+
+
+}
+
+.room {
+    width: 20vw;
+}
+
+.room-content {
+    width: 70vw;
+    border-left: 3px solid blueviolet;
+    padding-left: 20px;
+    border-radius: 5px;
+}
+
+.hanuma:hover {
+    width: 42vw;
+    top: -32vh;
+    height: 15vh;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+
+}
+
+.room-btn {
+    background-color: blueviolet;
+    padding: 10px 15px;
+    font-size: 2vh;
+    font-weight: 600;
+
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("rooms2.png");
+    height: 30vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 50px;
+    color: white;
+    font-weight: 600;
+}
+
+.box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0;
+    /*background-color: #f2f2f2;*/
+    height: auto;
+    width: 60%;
+    border: 8px solid whitesmoke;
+    border-radius: 5px;
+    z-index: 20;
+    background-color: rgba(116, 111, 93, 0.5);
+    /*box-shadow: 2px 2px 3px blueviolet;*/
+}
+
+.booksign {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    /* background-image: url(https://images.pexels.com/photos/2017802/pexels-photo-2017802.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1); */
+    z-index: 20;
+}
+
+.book_img {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    filter: blur(50px);
+    filter: brightness(50%);
+}
+
+.sign {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* background-image: url("signup.webp"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+input[type=text],
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=email],
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=password],
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.bg-img {
+    position: fixed;
+    width: 100vw;
+    height: 150vh;
+    z-index: 10;
+    filter: blur(10px);
+    filter: brightness(50%);
+}
+
+.c1 {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    width: 100%;
+    height: 50vh;
+    font-size: 10vh;
+    background-image: url(contact.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.c2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    background-color: #ddd;
+    padding: 8vh;
+    box-sizing: border-box;
+}
+
+.c3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    text-align: center;
+    border: 10px solid aliceblue;
+}
+
+.c4 {
+    padding-left: 8vh;
+    width: 50%;
+    border: 10px solid aliceblue;
+}
+
+.buttonlogin {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1vh;
+    border: 2px solid white;
+    border-radius: 1.5vh;
+    font-size: medium;
+    height: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: red;
+    color: whitesmoke;
+    font-weight: 600;
+    margin: auto;
+}
+
+.buttonlogin:hover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1vh;
+    border: 2px solid white;
+    border-radius: 1vh;
+    font-size: medium;
+    height: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    color: yellow;
+    margin: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+#buttonlogin :hover {
+    color: black;
+}
+
+
+.custom-date-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1vh;
+    font-size: medium;
+    box-shadow: 2px rgba(0, 0, 0, 0.5);
+    color: green;
+}
+.room_count1,.room_count2,.room_count3,.room_count4{
+    display:inline-block;
+
+}
