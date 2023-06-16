@@ -6,6 +6,13 @@ include("functions.php");
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+if(isset($_SESSION['login_error'])){
+    echo '<div class="alert alert-danger alert-dismissible fade show" roll="alert">
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    <strong> Incorrect Password! </strong>
+  </div>';
+  unset($_SESSION['login_error']);
+}
 if (isset($_POST['cancel'])) {
     header("Location:index.php");
 }
@@ -28,17 +35,23 @@ if (isset($_POST['login_btn'])) {
                     header("Location: booking.php");
                     ob_end_flush();
                 } else {
+                    $_SESSION['login_success'] = true;
+                    header("Location: index.php");
+                   
                     header("Location: index.php");
                 }
 
                 exit();
             } else {
-                echo "<script>alert('Incorrect password!!')</script>";
+                $_SESSION['login_error'] = true;
+                
+              header("Location:login.php");
+                // echo "<script>alert('Incorrect password!!')</script>";
 
             }
         } else {
             echo ("<script>alert('User not found')</script>");
-            header("Location: signup.php");
+            // header("Location: signup.php");
             die;
         }
 
@@ -60,9 +73,24 @@ if (isset($_POST['login_btn'])) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <style>
+        .alert-dismissible .fade-out {
+            animation: fadeOut 2s ease-in-out forwards;
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -86,7 +114,7 @@ if (isset($_POST['login_btn'])) {
                         Cancel
                     </button>
                 </div> -->
-                <button onclick="cancel()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button onclick="cancel()" type="button" class="buttonlogin" data-dismiss="modal">Cancel</button>
 
 
 
@@ -98,6 +126,10 @@ if (isset($_POST['login_btn'])) {
     </div>
     <script src="script.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
 
 </body>
 

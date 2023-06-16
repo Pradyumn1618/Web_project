@@ -3,6 +3,7 @@ var currentPage = window.location.href;
 
 // Check each navigation link and add the "current-page" class to the appropriate link
 var navigationLinks = document.querySelectorAll('.navigation a');
+
 navigationLinks.forEach(function(link) {
   if (link.href === currentPage) {
     link.classList.add('init');
@@ -42,12 +43,6 @@ function submitForm() {
   form.method = "post";
   form.action = "booking2.php"; // Replace with the appropriate PHP file
 for(let i=1;i<5;i++){
-  // Create hidden input fields for roomId and roomCount
-  //   var roomIdInput = document.createElement("input");
-  // roomIdInput.type = "hidden";
-  // roomIdInput.name = "roomId";
-  // roomIdInput.value = i;
-  // form.appendChild(roomIdInput);
 
   var roomCountInput = document.createElement("input");
   roomCountInput.type = "hidden";
@@ -68,5 +63,6 @@ function cancel(){
         window.location.href = "index.php";
     }, 2000); // Redirect after 2 seconds (2000 milliseconds)
 }
+
 
 

@@ -57,9 +57,12 @@ ul li a:hover {
     text-decoration: none;
     /* background-color: #ccc; */
     /*yet to be decided*/
-    border-radius: 50px;
+    
 
 
+}
+.dropdown-menu{
+    align-items: center;
 }
 
 button {
@@ -80,6 +83,9 @@ button {
     color: white;
     font-size: 1.75vh;
     font-weight: 600;
+}
+#logout{
+    margin-left: 2px;
 }
 
 #book {
@@ -181,6 +187,7 @@ p {
 #hotel {
     text-align: center;
     font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .para p {
@@ -247,6 +254,13 @@ p {
     font-size: 2vh;
     font-weight: 600;
 
+}
+
+.room-btn:hover{
+    background-color: green;
+    padding: 10px 15px;
+    font-size: 2vh;
+    font-weight: 600;
 }
 
 .top {
@@ -407,6 +421,7 @@ select {
     border-radius: 1.5vh;
     font-size: medium;
     height: auto;
+    width: 100%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background: red;
     color: whitesmoke;
@@ -416,18 +431,20 @@ select {
 
 .buttonlogin:hover {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 1vh;
     border: 2px solid white;
-    border-radius: 1vh;
+    border-radius: 1.5vh;
     font-size: medium;
     height: auto;
+    width: 100%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: red;
+    color: white;
     font-weight: 600;
-    color: yellow;
     margin: auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 }

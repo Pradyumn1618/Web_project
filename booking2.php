@@ -11,17 +11,17 @@ $logged = check_login($con);
 if ($logged) {
 
 
-    if (isset($_POST['logout_btn'])) {
-        // Destroy the session
-        session_destroy();
+  if (isset($_POST['logout_btn'])) {
+    // Destroy the session
+    session_destroy();
 
-        // Redirect to the login page
-        header("Location: login.php");
-        exit();
-    }
+    // Redirect to the login page
+    header("Location: login.php");
+    exit();
+  }
 } else {
-    header("Location:login.php");
-} 
+  header("Location:login.php");
+}
 
 if (isset($_POST['book_btn'])) {
   $r1 = $_POST['Count1'];
@@ -29,6 +29,7 @@ if (isset($_POST['book_btn'])) {
   $r3 = $_POST['Count3'];
   $r4 = $_POST['Count4'];
   $user = $_SESSION['Email'];
+  if(!($r1==0&&$r2==0&&$r3==0&&$r4==0)){
   $cancelbookid = "SELECT MAX(ID) as update_booking from Booking where user='$user'";
   $result = mysqli_query($con, $cancelbookid);
   $row = mysqli_fetch_assoc($result);
@@ -36,8 +37,15 @@ if (isset($_POST['book_btn'])) {
   $update = "UPDATE Booking set `Room 1`='$r1',`Room 2`='$r2',`Room 3`='$r3',`Room 4`='$r4' where ID='$ID'";
   if (mysqli_query($con, $update) === true) {
     echo "<script>alert('thanx for booking!')</script>";
-    header("Location:index.php");
+    header("Location:thanx.php");
   }
+}
+else{
+  echo '<div class="alert alert-danger alert-dismissible fade show" roll="alert">
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    <strong> Please select a room! </strong>
+  </div>';
+}
 }
 if (isset($_POST['cancel'])) {
   $user = $_SESSION['Email'];
@@ -48,7 +56,7 @@ if (isset($_POST['cancel'])) {
   $cancel = "DELETE from Booking where ID='$ID'";
   $result2 = mysqli_query($con, $cancel);
   if ($result2) {
-    header("Location:thanx.php");
+    header("Location:index.php");
   } else
     echo "unsuccessful";
 }
@@ -75,32 +83,24 @@ if (isset($_POST['cancel'])) {
     <form method="post">
       <div class="room_count1">
         <label for="roomCount1">Room 1 Count:</label>
-        <button type="button" onclick="decreaseRoomCount(1)">-</button>
-        <input type="text" id="roomCount1" value="0" name="Count1" readonly>
-        <button type="button" onclick="increaseRoomCount(1)">+</button>
+        <input type="number" id="roomCount1" value="0" name="Count1" min=0 max=100 >
       </div>
       <div class="room_count2">
         <label for="roomCount2">Room 2 Count:</label>
-        <button type="button" onclick="decreaseRoomCount(2)">-</button>
-        <input type="text" id="roomCount2" value="0" name="Count2" readonly>
-        <button type="button" onclick="increaseRoomCount(2)">+</button>
+        <input type="number" id="roomCount2" value="0" name="Count2" min=0 max=50>
       </div><br><br>
       <div class="room_count3">
         <label for="roomCount3">Room 3 Count:</label>
-        <button type="button" onclick="decreaseRoomCount(3)">-</button>
-        <input type="text" id="roomCount3" value="0" name="Count3" readonly>
-        <button type="button" onclick="increaseRoomCount(3)">+</button>
+        <input type="number" id="roomCount3" value="0" name="Count3" min=0 max=26>
       </div>
       <div class="room_count4">
         <label for="roomCount4">Room 4 Count:</label>
-        <button type="button" onclick="decreaseRoomCount(4)">-</button>
-        <input type="text" id="roomCount4" value="0" name="Count4" readonly>
-        <button type="button" onclick="increaseRoomCount(4)">+</button>
+        <input type="number" id="roomCount4" value="0" name="Count4" min=0 max=5>
       </div>
-  </div>
-  <input id="button" type="submit" value="BOOK" name="book_btn" class="buttonlogin"><br><br>
+  </div><br><br>
+  <input id="button" type="submit" value="BOOK" name="book_btn" class="buttonlogin" style="width:30vw;"><br><br>
 
-  <input id="cancel" class="buttonlogin" type="submit" value="Cancel" name="cancel"></form><br><br>
+  <input id="cancel" class="buttonlogin" type="submit" value="Cancel" name="cancel" style="width:30vw;"></form><br><br>
 
   </div>
 

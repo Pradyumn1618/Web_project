@@ -79,13 +79,13 @@ echo "<script>var name='$user';</script>";*/
                 <label for="Email" style="color: white;font-size:2.5vh"> Enter Email: </label>
                 <input id="email" type="email" name="Email" placeholder="Your email.." required><br><br>
                 <label for="Date" style="color: white;font-size:2.5vh"> Enter Check-in Date: </label><br><br>
-                <input id="date" type="date" class="custom-date-input" name="checkin_date" required><br><br>
+                <input id="date" type="date" class="custom-date-input" name="checkin_date" min="<?php echo date('Y-m-d'); ?>" max="2025-12-31" required><br><br>
                 <label for="Date" style="color: white;font-size:2.5vh"> Enter Check-out Date: </label><br><br>
-                <input id="date" type="date" class="custom-date-input" name="checkout_date" required><br><br>
+                <input id="date" type="date" class="custom-date-input" name="checkout_date" min="<?php echo date('Y-m-d'); ?>" max="2025-12-31" required><br><br>
                 
 
                 <input id="button" class="buttonlogin"type="submit" value="Save and choose rooms"><br><br>
-                <a href="index.php" class="btn btn-primary">Cancel</a><br>
+                <a href="index.php" class="buttonlogin">Cancel</a><br>
                 
             </form>
 

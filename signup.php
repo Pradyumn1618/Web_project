@@ -53,8 +53,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <input id="password" type="text" name="Password" placeholder="Password.." required><br><br>
 
                 <input id="button" class="buttonlogin" type="submit" value="SIGN UP"><br>
-                <a href="index.php" class="btn btn-primary">Cancel</a><br>
-                <a href="login.php" style="color:blue">Already an user?Click to login</a><br><br>
+                <a href="index.php" class="buttonlogin" style="width:auto">Cancel</a><br>
+                <a href="login.php" style="color:blue;">Already an user?Click to login</a><br><br>
             </form>
         </div>
     </div>
