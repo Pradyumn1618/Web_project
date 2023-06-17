@@ -6,6 +6,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 $_POST['book_now']=true;
+
 //include("login.php");
 $logged = check_login($con);
 //echo $logged ? 'true' : 'false';
@@ -65,6 +66,10 @@ echo "<script>var name='$user';</script>";*/
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <script>
+    window.open("", "_blank"); // Open a new tab
+    window.focus(); // Bring focus to the new tab
+</script>
     <!-- Head content here -->
 </head>
 

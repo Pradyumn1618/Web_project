@@ -9,22 +9,22 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"></head>
     </head>
 
-<body>
-<div class="header" data-aos="zoom-out">
+<body id="contacts_header">
+<div class="header" id="navigation"><!--  > -->
         <div class="logo">
 
         </div>
         <div class="menu">
             <ul class="navigation">
-                <li><a id="home" href="index.php">HOME</a></li>
-                <li><a id="about" href="about.php">ABOUT</a></li>
-                <li><a id="rooms" href="rooms.php">ROOMS</a></li>
-                <li><a id="reviews" href="reviews.php">REVIEWS</a></li>
-                <li><a id="contact" href="contact.php">CONTACT</a></li>
+                <li><a id="home" href="index.php" style="color: aquamarine">HOME</a></li>
+                <li><a id="about" href="about.php" style="color: aquamarine">ABOUT</a></li>
+                <li><a id="rooms" href="rooms.php" style="color: aquamarine">ROOMS</a></li>
+                <li><a id="reviews" href="reviews.php" style="color: aquamarine">REVIEWS</a></li>
+                <li><a id="contact" href="contact.php" style="color: aquamarine">CONTACT</a></li>
                 <!--<li><i class="fa fa-search"></i></li>-->
-                <li><button class="book"><a href="signup.php" id="book">BOOK NOW</a></button></li>
-
-            </ul>
+                <li>
+                <a href="booking.php" target="_blank" class="book" id="book" name="book_now">BOOK NOW</a>
+                </li><ul>
         </div>
     </div>
     <div class="c1" data-aos="fade-up">

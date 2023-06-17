@@ -63,6 +63,17 @@ function cancel(){
         window.location.href = "index.php";
     }, 2000); // Redirect after 2 seconds (2000 milliseconds)
 }
+function changebg(){
+  var navbar=document.getElementById('navigation');
+  var scroll=window.scrollY;
+  if(scroll<150){
+    navbar.classList.remove('bg');
+  }
+  else{
+    navbar.classList.add('bg');
+  }
+}
+window.addEventListener('scroll',changebg);
 
 
 

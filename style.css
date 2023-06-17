@@ -1,109 +1,31 @@
+/* *{
+    margin: 0;
+} */
+body{
+    background: rgba(255, 254, 254, 1);
+}
 .header {
     position: sticky;
     width: 100%;
     height: 6vh;
-    top: 0;
+    top: 0%;
     display: flex;
     justify-content: space-between;
-    background-color: white;
-    z-index: 1;
+    background: rgba(0,0,0, 0.4);
+    z-index: 2;
+    /* border-radius: 50px; */
+    margin:auto 0;
 }
 
-.logo {
-    justify-content: left;
-    width: 30vw;
-}
 
-.menu {
-    justify-content: space-evenly;
-    /*flex-end*/
-    width: 50vw;
-    /*60vw*/
-}
-
-a {
-    display: inline-flex;
-    justify-content: space-between;
-    text-decoration: none;
-    color: black;
-}
-
-li {
-    list-style: none;
-}
-
-ul.navigation {
-    display: flex;
-    justify-content: space-evenly;
-    /*flex-end*/
-    max-width: 50uw;
-    /*New*/
-    align-items: baseline;
-    /*New */
-}
-
-ul li {
-    display: inline-block;
-    margin: 0 10px;
-    color: black;
-    font-size: large;
-    /*New*/
-    font-weight: 600;
-}
-
-ul li a:hover {
-
-    color: blueviolet;
-    text-decoration: none;
-    /* background-color: #ccc; */
-    /*yet to be decided*/
-    
-
-
-}
-.dropdown-menu{
-    align-items: center;
-}
-
-button {
-    transition: 0.5s;
-    display: block;
-    border: none;
-    background: none;
-    outline: none;
-    border-radius: 50px;
-    /*New*/
-}
-
-.book {
-    display: block;
-    border: none;
-    background-color: blueviolet;
-    padding: 1vh 1.5vh;
-    color: white;
-    font-size: 1.75vh;
-    font-weight: 600;
-}
-#logout{
-    margin-left: 2px;
-}
-
-#book {
-    color: white;
-    border: none;
-}
-
-#book:hover {
-    opacity: 0.8;
-}
-
-/*a:visited,link,active{
-    color:black;
-}*/
-p {
-    font-family: 'Poppins', sans-serif;
-}
-
+/* #navigation{
+    position: stic;
+} */
+/* .body{
+    background: rgba(0, 0, 0, 0.5);
+    margin: 0;
+    height:auto;
+} */
 
 @keyframes animatedBackground {
     0% {
@@ -121,44 +43,34 @@ p {
         background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1600");
     }
 }
-
-/*@keyframes slideshow {
-    0% {
-      background-image: url("https://c4.wallpaperflare.com/wallpaper/280/463/660/kurumba-maldives-tourism-pool-resort-wallpaper-preview.jpg");
-    }
-    50%{
-        background-image: url("https://c4.wallpaperflare.com/wallpaper/850/698/458/lankanfushi-island-vacation-travel-gili-lankanfushi-wallpaper-preview.jpg");
-    }
-    
-    100%{
-    }
-  }*/
-.main {
-    display: block;
-    height: 120vh;
-    width: 100%;
-    /*background-image: url("https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1600");*/
-    /*background-repeat: no-repeat;*/
-    background-size: cover;
-    background-position: 0px 0px;
-    overflow: hidden;
-    background-repeat: repeat-y;
+#index_header{
+    background-size: 100vw 90vh;
+    /* width: 100%;
+    height: 120vh; */
+    /* background-position: top center; */
+    background-repeat: repeat-x;
+    background-position: 0 0;
     animation: animatedBackground 10s linear infinite alternate;
-    /*animation: slideshow 4s linear infinite alternate;*/
+
+}
+.main2{
+    /*background-image: url("https://c4.wallpaperflare.com/wallpaper/850/698/458/lankanfushi-island-vacation-travel-gili-lankanfushi-wallpaper-preview.jpg");
+    background-repeat: no-repeat;*/
+    display: flex;
+    justify-content: center;
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     z-index: 1;
+    
+   
 }
-
-
-
-.para {
+.para2{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    top: 30%;
+    top: 50%;
     position: relative;
     text-align: justify;
     text-justify: auto;
@@ -168,36 +80,243 @@ p {
     padding-right: 40px;
     border-bottom: 2px solid whitesmoke;
     border-top: 2px solid whitesmoke;
-
 }
-
-.hotel {
+.hotel2 {
 
     margin: auto 20px;
     width: 30vw;
 
 }
-
-.content {
-    text-align: left;
-    padding-left: 20px;
-    border-left: 3px solid red;
-}
-
-#hotel {
+#hotel2 {
     text-align: center;
     font-size: 40px;
     font-family: 'Times New Roman', Times, serif;
 }
+.para2 p {
+    max-width: 1200px;
+}
+.content2{
+    text-align: left;
+    padding-left: 20px;
+    border-left: 3px solid red;
+}
+#rooms_header{
+    border-radius: 50px;
+    background-image: url("rooms2.png");
+    background-repeat: no-repeat;
+    background-size: 100vw 30vh;
+    background-position: top center;
+}
+#contacts_header{
+    border-radius: 50px;
+    background-image: url("contact.png");
+    background-repeat: no-repeat;
+    background-size: 100vw 40vh;
+    background-position: top center;
+}
+
+
+.logo {
+    width: 30vw;
+}
+
+.menu {
+    justify-content: space-evenly;
+    width: 50vw;
+    /* margin: auto;
+    align-content: flex-end; */
+}
+
+a {
+    display: inline-flex;
+    justify-content: space-between;
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    list-style: none;
+}
+
+ul.navigation {
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 50uw;
+    align-items: center;
+    /* color: aquamarine; */
+}
+.bg{
+    background: rgba(0, 0, 0, 1);
+}
+
+ul li {
+    display: inline-block;
+    margin: 0 10px;
+    /* color: black; */
+    font-size: large;
+    /*New*/
+    font-weight: 600;
+}
+
+ul li a:hover {
+
+    color: black;
+    text-decoration: none;
+    font-size:2vh;
+}
+
+button {
+    transition: 0.5s;
+    display: block;
+    border: none;
+    background: none;
+    outline: none;
+    border-radius: 50px;
+}
+
+.book {
+    display: white;
+    border: none;
+    background-color: #0d6efd;
+    padding: 1vh 1vh;
+    color:white;
+    font-size: 1.75vh;
+    font-weight: 600;
+    width: 100%;
+    /* border-radius: 20px; */
+    cursor: pointer;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* @keyframes animatedBackground {
+    0% {
+        background-position: 0 0;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://c4.wallpaperflare.com/wallpaper/280/463/660/kurumba-maldives-tourism-pool-resort-wallpaper-preview.jpg");
+    }
+
+    50% {
+        background-position: -100% 0;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://c4.wallpaperflare.com/wallpaper/850/698/458/lankanfushi-island-vacation-travel-gili-lankanfushi-wallpaper-preview.jpg");
+    }
+
+    100% {
+        background-position: 100% 0;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1600");
+    }
+} */
+
+.main {
+    display: block;
+    height: 250vh;
+    width: 100%;
+    /* background-size: cover;
+    background-position: 0px 0px; */
+    position: relative;
+    /* background-repeat: repeat-y; */
+    /* animation: animatedBackground 10s linear infinite alternate; */
+    /*animation: slideshow 4s linear infinite alternate;*/
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    z-index: 1;
+    top: 58vh;
+}
+
+
+
+.para {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* top: 80vh; */
+    position: relative;
+    text-align: justify;
+    text-justify: auto;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    
+    /* background-color: rgba(221, 221, 221, 0.2); */
+    /* padding: 30px;
+    padding-right: 40px; */
+    /* border-bottom: 2px solid whitesmoke;
+    border-top: 2px solid whitesmoke; */
+
+}
+
+.get_more{
+    background-color: #0d6efd;
+    color:white;
+    padding: 3px 10px;
+}
+.get_more:hover{
+    text-decoration: none;
+    color:white;
+}
+
+.info{
+    display: flex;
+    flex-direction: row;
+    background-color:#D3B5E5;
+    margin: 1% 0;
+    width: 96vw;
+    padding: 20px;
+    border-radius: 40px; 
+    justify-content: space-between;
+    box-shadow: 2px 2px 8px black;
+    margin-bottom: 1vh;
+
+}
+.info:hover{
+    width:98vw;
+    box-shadow: 3px 3px 8px black;
+    font-size:21.5px;
+}
+#Index_About{
+    margin-top: 0px;
+}
+.info_heading{
+    margin-bottom: 3%;
+}
+.content {
+    box-sizing: border-box;
+    padding: 0px 5%;
+    width:63%;
+    
+}
+.index_content_odd{
+    text-align: right;
+    border-right: 5px solid black;
+}
+.index_content_even{
+    border-left: 5px solid black;
+}
+.image_container{
+    width:33%;
+}
+.image{
+    border-radius: 20px;
+    width: 100%;
+    height: auto;
+}
+#Index_Facilities{
+    flex-direction: row-reverse;
+}
+
+
 
 .para p {
     max-width: 1200px;
 }
 
 .init {
-    border-bottom: 3px solid blueviolet;
+    border-bottom: 3px solid #0d6efd;
     padding-bottom: 5px;
-    color: blueviolet;
+    color: #0d6efd;
 }
 
 .intro {
@@ -223,7 +342,7 @@ p {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9), 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.9);
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    top: -30vh;
+    /* top: -30vh; */
 
 
 }
@@ -256,18 +375,11 @@ p {
 
 }
 
-.room-btn:hover{
-    background-color: green;
-    padding: 10px 15px;
-    font-size: 2vh;
-    font-weight: 600;
-}
-
 .top {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url("rooms2.png");
+    /* background-image: url("rooms2.png"); */
     height: 30vh;
     width: 100%;
     background-repeat: no-repeat;
@@ -379,7 +491,7 @@ select {
     width: 100%;
     height: 50vh;
     font-size: 10vh;
-    background-image: url(contact.png);
+    /* background-image: url(contact.png); */
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -421,7 +533,6 @@ select {
     border-radius: 1.5vh;
     font-size: medium;
     height: auto;
-    width: 100%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background: red;
     color: whitesmoke;
@@ -431,20 +542,18 @@ select {
 
 .buttonlogin:hover {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 1vh;
     border: 2px solid white;
-    border-radius: 1.5vh;
+    border-radius: 1vh;
     font-size: medium;
     height: auto;
-    width: 100%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background: red;
-    color: white;
     font-weight: 600;
+    color: yellow;
     margin: auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 }
