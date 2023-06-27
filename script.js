@@ -9,6 +9,13 @@ navigationLinks.forEach(function(link) {
     link.classList.add('init');
   }
 });
+var navigationLinks = document.querySelectorAll('.dropdown-menu a');
+
+navigationLinks.forEach(function(link) {
+  if (link.href === currentPage) {
+    link.classList.add('init2');
+  }
+});
 function increaseRoomCount(roomNumber) {
   var roomCountElement = document.getElementById("roomCount"+roomNumber);
   var roomCount = parseInt(roomCountElement.value);
