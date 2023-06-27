@@ -82,7 +82,7 @@ else{
     echo '<div style="text-align:center; display:flex;align-items:center;justify-content:center;flex-direction:column;">';
 echo '<h1 style="font-size:6vh;">My Past Bookings</h1>';
 echo '<p style="font-size:3vh;">NO BOOKING FOUND</p>';
-echo '<a class="book" href="booking.php">BOOK HERE!</a>';
+
 echo '</div><br><br><br>';
 
 }

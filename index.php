@@ -53,7 +53,7 @@ if (isset($_POST['book_now'])) {
                 <li><a id="home" href="index.php" style="color: aquamarine">HOME</a></li>
                 <li><a id="about" href="about.php" style="color: aquamarine">ABOUT</a></li>
                 <li><a id="rooms" href="rooms.php" style="color: aquamarine">ROOMS</a></li>
-                <li><a id="reviews" href="reviews.php" style="color: aquamarine">REVIEWS</a></li>
+                <!-- <li><a id="reviews" href="reviews.php" style="color: aquamarine">REVIEWS</a></li> -->
                 <li><a id="contact" href="contact.php" style="color: aquamarine">CONTACT</a></li>
                 <!--<li><i class="fa fa-search"></i></li>-->
                 <li>
@@ -103,7 +103,7 @@ if (isset($_POST['book_now'])) {
                     <li><a class="dropdown-item" id="home" href="index.php">HOME</a></li>
                     <li><a class="dropdown-item" id="about" href="about.php">ABOUT</a></li>
                     <li><a class="dropdown-item" id="rooms" href="rooms.php">ROOMS</a></li>
-                    <li><a class="dropdown-item" id="reviews" href="reviews.php">REVIEWS</a></li>
+                    <!-- <li><a class="dropdown-item" id="reviews" href="reviews.php">REVIEWS</a></li> -->
                     <li><a class="dropdown-item" id="contact" href="contact.php">CONTACT</a></li>
                     <!--<li><i class="fa fa-search"></i></li>-->
                     <li>

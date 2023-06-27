@@ -33,7 +33,7 @@
                 <li><a id="home" href="index.php" style="color: aquamarine">HOME</a></li>
                 <li><a id="about" href="about.php" style="color: aquamarine">ABOUT</a></li>
                 <li><a id="rooms" href="rooms.php" style="color: aquamarine">ROOMS</a></li>
-                <li><a id="reviews" href="reviews.php" style="color: aquamarine">REVIEWS</a></li>
+                <!-- <li><a id="reviews" href="reviews.php" style="color: aquamarine">REVIEWS</a></li> -->
                 <li><a id="contact" href="contact.php" style="color: aquamarine">CONTACT</a></li>
                 <!--<li><i class="fa fa-search"></i></li>-->
                 <li>
@@ -63,6 +63,8 @@
     <div class="top" data-aos="fade-up">
         ROOMS
     </div>
+
+    
     <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 

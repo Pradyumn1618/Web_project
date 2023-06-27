@@ -28,7 +28,7 @@
             <li><a id="home" href="index.php" style="color: aquamarine">HOME</a></li>
             <li><a id="about" href="about.php" style="color: aquamarine">ABOUT</a></li>
             <li><a id="rooms" href="rooms.php" style="color: aquamarine">ROOMS</a></li>
-            <li><a id="reviews" href="reviews.php" style="color: aquamarine">REVIEWS</a></li>
+            <!-- <li><a id="reviews" href="reviews.php" style="color: aquamarine">REVIEWS</a></li> -->
             <li><a id="contact" href="contact.php" style="color: aquamarine">CONTACT</a></li>
             <!--<li><i class="fa fa-search"></i></li>-->
             <li>

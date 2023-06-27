@@ -105,11 +105,48 @@ if (isset($_POST['cancel'])) {
         <input type="number" id="roomCount4" value="0" name="Count4" min=0 max=5>
       </div>
   </div><br><br>
+  <div class="total" >
+    <h3>Total amount : Rs.</h3><div id="total"></div>
+      </div>
+      <div class="total" >
+    <h3>GST (18%) : Rs. </h3><div id="total2"></div>
+      </div>
+      <div class="total" >
+    <h3>Grand Total amount : Rs.</h3><div id="total3"></div>
+      </div>
   <input id="button" type="submit" value="BOOK" name="book_btn" class="buttonlogin" style="width:30vw;"><br><br>
 
   <input id="cancel" class="buttonlogin" type="submit" value="Cancel" name="cancel" style="width:30vw;" onclick="showConfirmation()"></form><br><br>
 
-  </div>
+ <script>
+  var room1=document.getElementById("roomCount1");
+  var room2=document.getElementById("roomCount2");
+  var room3=document.getElementById("roomCount3");
+  var room4=document.getElementById("roomCount4");
+
+  room1.addEventListener('input', handleRoomCountChange);
+  room2.addEventListener('input', handleRoomCountChange);
+  room3.addEventListener('input', handleRoomCountChange);
+  room4.addEventListener('input', handleRoomCountChange);
+
+  function handleRoomCountChange() {
+    
+    var room1ct = room1.value;
+    var room2ct = room2.value;
+    var room3ct = room3.value;
+    var room4ct = room4.value;
+
+    // Update the display
+    var total1 =document.getElementById("total").innerHTML=room1ct*1000+room2ct*1200+room3ct*1400+room4ct*1600 ;
+    var total2 =document.getElementById("total2").innerHTML=0.18*(room1ct*1000+room2ct*1200+room3ct*1400+room4ct*1600) ;
+    var total3 =total1 +total2;
+    document.getElementById("total3").innerHTML= total3 + "/-";
+  }
+
+  
+
+  
+  </script>
 
   <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>

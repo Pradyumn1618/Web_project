@@ -869,3 +869,18 @@ select {
   .checked{
     color: orange;
   }
+
+  .total{
+    display: flex;
+    flex-direction: row;
+  }
+
+  #total,#total2,#total3{
+    display: flex;
+    flex-direction: row;
+    font-size: x-large;
+    padding-left: 1vw;;
+    float: right;
+    width: 20%;
+    /* padding-top: 1vh; */
+  }
