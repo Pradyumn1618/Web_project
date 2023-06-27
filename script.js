@@ -75,5 +75,23 @@ function changebg(){
 }
 window.addEventListener('scroll',changebg);
 
+const element=document.querySelector('.alert');
+function removeElement(){
+  element.remove();
+}
+setTimeout(removeElement,2000);
 
+function togglePasswordVisibility() {
+  var passwordInput = document.getElementById('password');
+  var togglePassword = document.getElementById('togglePassword');
+
+  if (passwordInput.type === 'password') {
+    passwordInput.type = 'text';
+    document.getElementById('togglePassword').innerHTML="HIDE";
+  } else {
+    passwordInput.type = 'password';
+    document.getElementById('togglePassword').innerHTML="SHOW";
+
+  }
+}
 

@@ -4,9 +4,14 @@ include("connection.php");
 include("functions.php");
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    $name = $_POST['Name'];
-    $email = $_POST['Email'];
+    $name = mysqli_real_escape_string($con,$_POST['Name']);
+    $email = mysqli_real_escape_string($con,$_POST['Email']);
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        die("Invalid email address");
+    }
+    
     $password = $_POST['Password'];
+    
     $query = "select * from Users where Email='$email' limit 1";
     $result = mysqli_query($con, $query);
     if ($result && mysqli_num_rows($result) > 0) {
@@ -64,13 +69,26 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             return emailRegex.test(email);
         }
         document.getElementById('button').addEventListener('click', function (event) {
-            //event.preventDefault(); // Prevent form submission
-
+            
             const emailInput = document.getElementById('email');
             const email = emailInput.value;
 
             if (!validateEmail(email)) {
-                alert('Invalid email');
+                alert('Please enter a valid Email');
+                event.preventDefault();
+            }
+        });
+        function validateName(name) {
+            const nameRegex = /^[a-zA-Z-' ]*$/;
+            return nameRegex.test(name);
+        }
+        document.getElementById('button').addEventListener('click', function (event) {
+            
+            const nameInput = document.getElementById('fname');
+            const name = nameInput.value;
+
+            if (!validateName(name)) {
+                alert('Only letters and white space allowed in Name');
                 event.preventDefault();
             }
         });

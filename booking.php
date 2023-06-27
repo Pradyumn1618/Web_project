@@ -5,7 +5,7 @@ include("functions.php");
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-$_POST['book_now']=true;
+$_POST['book_now'] = true;
 
 //include("login.php");
 $logged = check_login($con);
@@ -24,35 +24,37 @@ if ($logged) {
 } else {
     header("Location:login.php");
 }
-if(isset($_POST['cancel'])){
-    header("Location:index.php");
-}
+// if(isset($_POST['cancel'])){
+//     header("Location:index.php");
+// }
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    $name = $_POST['Name'];
-    $email = $_POST['Email'];
+    $name = mysqli_real_escape_string($con,$_POST['Name']);
+    $email = mysqli_real_escape_string($con,$_POST['Email']);
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        die("Invalid email address");
+    }
+    
     $checkin = $_POST['checkin_date'];
     $checkout = $_POST['checkout_date'];
     $foreign = $_SESSION['Email'];
-    
-        if (!empty($name) && !empty($checkin) && !empty($email)&&!empty($checkout)) {
-            $lastBookingIdQuery = "SELECT MAX(ID) AS last_booking_id FROM Booking";
+
+    if (!empty($name) && !empty($checkin) && !empty($email) && !empty($checkout)) {
+        $lastBookingIdQuery = "SELECT MAX(ID) AS last_booking_id FROM Booking";
         $result = mysqli_query($con, $lastBookingIdQuery);
         $row = mysqli_fetch_assoc($result);
         $lastBookingId = $row['last_booking_id'];
 
         // Increment the last booking ID
         $newBookingId = $lastBookingId ? $lastBookingId + 1 : 1;
-            $query = "insert into Booking(`Name`,`Email`,`checkin date`,`checkout date`,`Room 1`,`Room 2`,`Room 3`,`Room 4`,`user`,`ID`) values('$name','$email','$checkin','$checkout','0','0','0','0','$foreign','$newBookingId')";
-            mysqli_query($con, $query);
-            
-            header("Location: booking2.php");
-    
-}}
-/*$user=check_login($con);
-//var_dump($user);
-//$email=$user['Email'];
-echo "<script>var name='$user';</script>";*/
+        $query = "insert into Booking(`Name`,`Email`,`checkin date`,`checkout date`,`Room 1`,`Room 2`,`Room 3`,`Room 4`,`user`,`ID`) values('$name','$email','$checkin','$checkout','0','0','0','0','$foreign','$newBookingId')";
+        mysqli_query($con, $query);
+
+        header("Location: booking2.php");
+
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -67,60 +69,77 @@ echo "<script>var name='$user';</script>";*/
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <script>
-    window.open("", "_blank"); // Open a new tab
-    window.focus(); // Bring focus to the new tab
-</script>
-    <!-- Head content here -->
+        window.open("", "_blank");
+        window.focus();
+
+        function showConfirmation() {
+            var result = confirm('Are you sure you want to cancel?');
+            if (result) {
+                window.location = 'index.php';
+            }
+        }
+
+    </script>
+    
 </head>
 
 <body>
-    <div class="booksign" >
-        <img src="https://images.pexels.com/photos/2017802/pexels-photo-2017802.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="book_img">
-<div class="box">
+    <div class="booksign">
+        <img src="https://images.pexels.com/photos/2017802/pexels-photo-2017802.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            class="book_img">
+        <div class="box">
             <form method="post">
-                <div style="font-size:6.5vh;color:white;font-family:Century Gothic;text-align:center">Bookings</div><br><br>
+                <div style="font-size:6.5vh;color:white;font-family:Century Gothic;text-align:center">Bookings</div>
+                <br><br>
                 <label for="fname" style="color: white;font-size:2.5vh"> Enter Name: </label>
                 <input id="fname" type="text" name="Name" placeholder="Booking name..." required><br><br>
                 <label for="Email" style="color: white;font-size:2.5vh"> Enter Email: </label>
                 <input id="email" type="email" name="Email" placeholder="Your email.." required><br><br>
                 <label for="Date" style="color: white;font-size:2.5vh"> Enter Check-in Date: </label><br><br>
-                <input id="date" type="date" class="custom-date-input" name="checkin_date" min="<?php echo date('Y-m-d'); ?>" max="2025-12-31" required><br><br>
+                <input id="date" type="date" class="custom-date-input" name="checkin_date"
+                    min="<?php echo date('Y-m-d'); ?>" max="2025-12-31" required><br><br>
                 <label for="Date" style="color: white;font-size:2.5vh"> Enter Check-out Date: </label><br><br>
-                <input id="date" type="date" class="custom-date-input" name="checkout_date" min="<?php echo date('Y-m-d'); ?>" max="2025-12-31" required><br><br>
-                
+                <input id="date" type="date" class="custom-date-input" name="checkout_date"
+                    min="<?php echo date('Y-m-d'); ?>" max="2025-12-31" required><br><br>
 
-                <input id="button" class="buttonlogin"type="submit" value="Save and choose rooms"><br><br>
-                <a href="index.php" class="buttonlogin">Cancel</a><br>
-                
+
+                <input id="button" class="buttonlogin" type="submit" value="Save and choose rooms"><br><br>
+                <button id="cancelButton" type="button" onclick="showConfirmation()" class="buttonlogin">Cancel<button><br>
+
             </form>
 
         </div>
-</div>
-    <!--<div class="header" data-aos="zoom-out">
-        <div class="logo">
-
-        </div>
-        <div class="menu">
-            <ul class="navigation">
-                <li><a id="home" href="index.php">HOME</a></li>
-                <li><a id="about" href="about.php">ABOUT</a></li>
-                <li><a id="rooms" href="rooms.php">ROOMS</a></li>
-                <li><a id="reviews" href="reviews.php">REVIEWS</a></li>
-                <li><a id="contact" href="contact.php">CONTACT</a></li>
-                <li><i class="fa fa-search"></i></li>
-                <li>
-                    <form method="post">
-                        <input type="submit" name="logout_btn" value="Logout">
-                    </form>
-                <li>
-
-            </ul>
-        </div>
     </div>
+    <script>
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s\d@]+\.[^\s\d@]+$/;
+            return emailRegex.test(email);
+        }
+        document.getElementById('button').addEventListener('click', function (event) {
+            
+            const emailInput = document.getElementById('email');
+            const email = emailInput.value;
 
-     Booking page content here -->
+            if (!validateEmail(email)) {
+                alert('Please enter a valid Email');
+                event.preventDefault();
+            }
+        });
+        function validateName(name) {
+            const nameRegex = /^[a-zA-Z-' ]*$/;
+            return nameRegex.test(name);
+        }
+        document.getElementById('button').addEventListener('click', function (event) {
+            
+            const nameInput = document.getElementById('fname');
+            const name = nameInput.value;
 
-    <!-- Logout button -->
+            if (!validateName(name)) {
+                alert('Only letters and white space allowed in Name');
+                event.preventDefault();
+            }
+        });
+    </script>
 
 </body>
 

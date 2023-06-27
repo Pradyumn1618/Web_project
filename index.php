@@ -37,66 +37,125 @@ if (isset($_POST['book_now'])) {
                 window.scrollTo(0, 0); // Scrolls the page to the top
             }, 80); // Scrolls the page to the top
         };
+        
     </script>
 
 </head>
 
 <body id="index_header" data-aos="zoom-out">
-     <!-- <div class="pic">  -->
-        <div class="header" id="navigation"><!--  > -->
-            <div class="logo">
-                <!-- <img src="logo.png"> -->
-            </div>
-            <div class="menu">
-                <ul class="navigation">
-                    <li><a id="home" href="index.php" style="color: aquamarine">HOME</a></li>
-                    <li><a id="about" href="about.php" style="color: aquamarine">ABOUT</a></li>
-                    <li><a id="rooms" href="rooms.php" style="color: aquamarine">ROOMS</a></li>
-                    <li><a id="reviews" href="reviews.php" style="color: aquamarine">REVIEWS</a></li>
-                    <li><a id="contact" href="contact.php" style="color: aquamarine">CONTACT</a></li>
+    <!-- <div class="pic">  -->
+    <div class="header" id="navigation"><!--  > -->
+        <div class="logo">
+            <!-- <img src="logo.png"> -->
+        </div>
+        <div class="menu">
+            <ul class="navigation">
+                <li><a id="home" href="index.php" style="color: aquamarine">HOME</a></li>
+                <li><a id="about" href="about.php" style="color: aquamarine">ABOUT</a></li>
+                <li><a id="rooms" href="rooms.php" style="color: aquamarine">ROOMS</a></li>
+                <li><a id="reviews" href="reviews.php" style="color: aquamarine">REVIEWS</a></li>
+                <li><a id="contact" href="contact.php" style="color: aquamarine">CONTACT</a></li>
+                <!--<li><i class="fa fa-search"></i></li>-->
+                <li>
+                    <a href="booking.php" target="_blank" class="book" id="book" name="book_now">BOOK NOW</a>
+                </li>
+
+
+                <?php if ($logged_in): ?>
+                    <!-- Logout button -->
+                    <li>
+
+                        <div class="dropdown">
+
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                                My Account
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="myprofile.php">My Profile</a></li>
+                                <li> <a class="dropdown-item" href="mybookings.php">My Bookings</a></li>
+                                <li>
+                                    <form method="post">
+                                        <input class="book" id="logout" type="submit" name="logout_btn" value="Logout">
+                                    </form>
+                                </li>
+                        </div>
+
+
+
+                    </li>
+                <?php else: ?>
+                    <li>
+                        <form method="post">
+                            <input class="book" type="submit" name="login_btn" value="Login">
+                            <!-- <li> <form method="post"> -->
+                            <!-- <input class="book" type="submit" name="register_btn" value="Register"> -->
+                        </form>
+                    </li>
+                <?php endif; ?>
+
+
+            </ul>
+            <div class="dropdown" id="responsive">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" id="home" href="index.php">HOME</a></li>
+                    <li><a class="dropdown-item" id="about" href="about.php">ABOUT</a></li>
+                    <li><a class="dropdown-item" id="rooms" href="rooms.php">ROOMS</a></li>
+                    <li><a class="dropdown-item" id="reviews" href="reviews.php">REVIEWS</a></li>
+                    <li><a class="dropdown-item" id="contact" href="contact.php">CONTACT</a></li>
                     <!--<li><i class="fa fa-search"></i></li>-->
                     <li>
-                        <a href="booking.php" target="_blank" class="book" id="book" name="book_now">BOOK NOW</a>
+
+                        <a href="booking.php" target="_blank" class="dropdown-item" name="book_now">BOOK NOW</a>
+
                     </li>
 
 
-                    <?php if ($logged_in): ?>
-                        <!-- Logout button -->
-                        <li>
-
-                            <div class="dropdown">
-
-                                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
-                                    My Account
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="myprofile.php">My Profile</a></li>
-                                    <li> <a class="dropdown-item" href="mybookings.php">My Bookings</a></li>
-                                    <li>
-                                        <form method="post">
-                                            <input class="book" id="logout" type="submit" name="logout_btn" value="Logout">
-                                        </form>
-                                    </li>
-                            </div>
+                    <li class="dropdown">
+                        
+                            <?php if ($logged_in): ?>
+                                <!-- Logout button -->
 
 
+                                <!-- <div class="dropdown"> -->
 
-                        </li>
-                    <?php else: ?>
-                        <li>
-                            <form method="post">
-                                <input class="book" type="submit" name="login_btn" value="Login">
-                                <!-- <li> <form method="post"> -->
-                                <!-- <input class="book" type="submit" name="register_btn" value="Register"> -->
-                            </form>
-                        </li>
-                    <?php endif; ?>
+                                    <a href="#" class="dropdown-item"><button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                                        My Account
+                                    </button></a>
+                                    <ul class="dropdown-menu" class="dropdown-submenu">
+                                        <li><a class="dropdown-item" href="myprofile.php">My Profile</a></li>
+                                        <li> <a class="dropdown-item" href="mybookings.php">My Bookings</a></li>
+                                        <li>
+                                            <form method="post">
+                                                <input class="book" id="logout" type="submit" name="logout_btn"
+                                                    value="Logout">
+                                            </form>
+                                        </li>
+                                    </ul>
+                                <!-- </div> -->
+
+
+
+
+                            <?php else: ?>
+
+                                <form method="post">
+                                    <input class="book" type="submit" name="login_btn" value="Login">
+                                    
+                                </form>
+
+                            <?php endif; ?>
+                        
+                    </li>
 
 
                 </ul>
             </div>
         </div>
-     
+    </div>
+    <br><br><br><br><br><br><br><br><br><br>
     <div class="main2" data-aos="fade-up">
 
         <div class="para2">
@@ -119,7 +178,7 @@ if (isset($_POST['book_now'])) {
             </div>
         </div>
     </div>
-                    <!-- </div>               -->
+    <!-- </div>               -->
 
     <div class="main"><!--  > -->
 
@@ -128,7 +187,7 @@ if (isset($_POST['book_now'])) {
 
                 <div class="content index_content_odd">
                     <div class="info_heading" id="Index_About_Heading">
-                        <h1 style="color:black;" id="hotel">About</h1>
+                        <h1 style="color:whitesmoke;" id="hotel">About</h1>
                     </div>
                     <p>
                         Eka is a contemporary 4-star hotel in Nairobi, conveniently located at the intersection
@@ -150,7 +209,7 @@ if (isset($_POST['book_now'])) {
 
                 <div class="content index_content_even">
                     <div class="info_heading" id="Index_Facilities_Heading">
-                        <h1 style="color:black" id="hotel">Facilities</h1>
+                        <h1 style="color:whitesmoke;" id="hotel">Facilities</h1>
                     </div>
                     <p>
                         Eka Hotel Nairobi features 167 well-appointed rooms, five meeting & conference rooms,
@@ -170,7 +229,7 @@ if (isset($_POST['book_now'])) {
 
                 <div class="content index_content_odd">
                     <div class="info_heading" id="Index_About_Heading">
-                        <h1 style="color:black;" id="hotel">Rooms</h1>
+                        <h1 style="color:whitesmoke;" id="hotel">Rooms</h1>
                     </div>
                     <p>
                         Eka Hotel rooms are designed to provide the highest levels of Comfort, Convenience and
@@ -195,7 +254,7 @@ if (isset($_POST['book_now'])) {
 
                 <div class="content index_content_even">
                     <div class="info_heading" id="Index_About_Heading">
-                        <h1 style="color:black;" id="hotel">Dining</h1>
+                        <h1 style="color:whitesmoke;" id="hotel">Dining</h1>
                     </div>
                     <p>
                         Eka Hotel has stirred up the local culinary scene with two restaurants, two bars and a
@@ -214,7 +273,7 @@ if (isset($_POST['book_now'])) {
             </div>
         </div>
     </div>
-                    
+
     <!-- <div class="intro" data-aos="fade-up">
         <div class="hanuma">
             <div class="room">

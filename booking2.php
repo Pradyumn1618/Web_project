@@ -2,20 +2,18 @@
 session_start();
 include("connection.php");
 include("functions.php");
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 
 $logged = check_login($con);
-//echo $logged ? 'true' : 'false';
+
 if ($logged) {
 
 
   if (isset($_POST['logout_btn'])) {
-    // Destroy the session
+   
     session_destroy();
-
-    // Redirect to the login page
     header("Location: login.php");
     exit();
   }
@@ -57,8 +55,10 @@ if (isset($_POST['cancel'])) {
   $result2 = mysqli_query($con, $cancel);
   if ($result2) {
     header("Location:index.php");
-  } else
+  } else{
     echo "unsuccessful";
+  }
+  unset($_POST['cancel']);
 }
 ?>
 <!DOCTYPE html>
@@ -76,7 +76,14 @@ if (isset($_POST['cancel'])) {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-
+    <script>
+      function showConfirmation() {
+            var result = confirm('Are you sure you want to cancel?');
+            if (!result) {
+                event.preventDefault();
+            }
+        }
+        </script>
 
   </head>
   <div class="roombooking">
@@ -100,7 +107,7 @@ if (isset($_POST['cancel'])) {
   </div><br><br>
   <input id="button" type="submit" value="BOOK" name="book_btn" class="buttonlogin" style="width:30vw;"><br><br>
 
-  <input id="cancel" class="buttonlogin" type="submit" value="Cancel" name="cancel" style="width:30vw;"></form><br><br>
+  <input id="cancel" class="buttonlogin" type="submit" value="Cancel" name="cancel" style="width:30vw;" onclick="showConfirmation()"></form><br><br>
 
   </div>
 
