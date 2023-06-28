@@ -6,7 +6,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 $_POST['book_now'] = true;
-
+$_SESSION['temp']=[];
 //include("login.php");
 $logged = check_login($con);
 //echo $logged ? 'true' : 'false';
@@ -47,8 +47,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         // Increment the last booking ID
         $newBookingId = $lastBookingId ? $lastBookingId + 1 : 1;
-        $query = "insert into Booking(`Name`,`Email`,`checkin date`,`checkout date`,`Room 1`,`Room 2`,`Room 3`,`Room 4`,`user`,`ID`) values('$name','$email','$checkin','$checkout','0','0','0','0','$foreign','$newBookingId')";
-        mysqli_query($con, $query);
+        $_SESSION['temp']['Name']=$name;
+        $_SESSION['temp']['Email']=$email;
+        $_SESSION['temp']['checkin date']=$checkin;
+        $_SESSION['temp']['checkout date']=$checkout;
+        $_SESSION['temp']['ID']=$ID;
+
+        // $query = "insert into Booking(`Name`,`Email`,`checkin date`,`checkout date`,`Room 1`,`Room 2`,`Room 3`,`Room 4`,`user`,`ID`) values('$name','$email','$checkin','$checkout','0','0','0','0','$foreign','$newBookingId')";
+        // mysqli_query($con, $query);
 
         header("Location: booking2.php");
 
@@ -78,6 +84,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 window.location = 'index.php';
             }
         }
+        function checkDate(){
+            var checkin = new Date(document.getElementById("date1").value);
+            var checkout = new Date(document.getElementById("date2").value);
+            if(checkout<=checkin){
+                alert("Check-out date must after the Check-in date");
+                event.preventDefault();
+            }
+
+        }
 
     </script>
     
@@ -88,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <img src="https://images.pexels.com/photos/2017802/pexels-photo-2017802.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             class="book_img">
         <div class="box">
-            <form method="post">
+            <form method="post" onsubmit="checkDate()">
                 <div style="font-size:6.5vh;color:white;font-family:Century Gothic;text-align:center">Bookings</div>
                 <br><br>
                 <label for="fname" style="color: white;font-size:2.5vh"> Enter Name: </label>
@@ -96,10 +111,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <label for="Email" style="color: white;font-size:2.5vh"> Enter Email: </label>
                 <input id="email" type="email" name="Email" placeholder="Your email.." required><br><br>
                 <label for="Date" style="color: white;font-size:2.5vh"> Enter Check-in Date: </label><br><br>
-                <input id="date" type="date" class="custom-date-input" name="checkin_date"
+                <input id="date1" type="date" class="custom-date-input" name="checkin_date"
                     min="<?php echo date('Y-m-d'); ?>" max="2025-12-31" required><br><br>
                 <label for="Date" style="color: white;font-size:2.5vh"> Enter Check-out Date: </label><br><br>
-                <input id="date" type="date" class="custom-date-input" name="checkout_date"
+                <input id="date2" type="date" class="custom-date-input" name="checkout_date"
                     min="<?php echo date('Y-m-d'); ?>" max="2025-12-31" required><br><br>
 
 

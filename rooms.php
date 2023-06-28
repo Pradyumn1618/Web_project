@@ -74,7 +74,7 @@
                             <div class="rooms_info">
                                 <br>
                                 <h3><strong>Business Suites</strong></h3>
-                                <strong>Size</strong> : 43 sqm<br><strong>Price</strong> :
+                                <strong>Size</strong> : 43 sqm<br><strong>Price : Rs. 10,000 per night</strong>
                             </div>
                         </div>
 
@@ -96,7 +96,7 @@
                             <div class="rooms_info">
                                 <br>
                                 <h3><strong>Superior rooms</strong></h3>
-                                <strong>Size</strong> : 30 sqm<br><strong>Price</strong> :
+                                <strong>Size</strong> : 30 sqm<br><strong>Price: Rs. 5,000 per night</strong>
                             </div>
                         </div>
 
@@ -118,7 +118,7 @@
                             <div class="rooms_info">
                                 <br>
                                 <h3><strong>The Executive Suite</strong></h3>
-                                <strong>Size</strong> : 30 sqm<br><strong>Price</strong> :
+                                <strong>Size</strong> : 30 sqm<br><strong>Price: Rs. 15,000 per night</strong> :
                             </div>
                         </div>
 
@@ -140,7 +140,7 @@
                             <div class="rooms_info">
                                 <br>
                                 <h3><strong>The Presidential Suite</strong></h3>
-                                <strong>Size</strong> : 30 sqm<br><strong>Price</strong> :
+                                <strong>Size</strong> : 30 sqm<br><strong>Price: Rs. 20,000 per night</strong>
                             </div>
                         </div>
 
