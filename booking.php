@@ -51,8 +51,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $_SESSION['temp']['Email']=$email;
         $_SESSION['temp']['checkin date']=$checkin;
         $_SESSION['temp']['checkout date']=$checkout;
-        $_SESSION['temp']['ID']=$ID;
-
+        $_SESSION['temp']['ID']=$newBookingId;
+       var_dump($_SESSION['temp']['ID']);
         // $query = "insert into Booking(`Name`,`Email`,`checkin date`,`checkout date`,`Room 1`,`Room 2`,`Room 3`,`Room 4`,`user`,`ID`) values('$name','$email','$checkin','$checkout','0','0','0','0','$foreign','$newBookingId')";
         // mysqli_query($con, $query);
 

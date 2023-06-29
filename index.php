@@ -113,7 +113,7 @@ if (isset($_POST['book_now'])) {
                     </li>
 
 
-                    <li class="dropdown">
+                    
                         
                             <?php if ($logged_in): ?>
                                 <!-- Logout button -->
@@ -121,10 +121,7 @@ if (isset($_POST['book_now'])) {
 
                                 <!-- <div class="dropdown"> -->
 
-                                    <a href="#" class="dropdown-item"><button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
-                                        My Account
-                                    </button></a>
-                                    <ul class="dropdown-menu" class="dropdown-submenu">
+                                    
                                         <li><a class="dropdown-item" href="myprofile.php">My Profile</a></li>
                                         <li> <a class="dropdown-item" href="mybookings.php">My Bookings</a></li>
                                         <li>
@@ -133,22 +130,21 @@ if (isset($_POST['book_now'])) {
                                                     value="Logout">
                                             </form>
                                         </li>
-                                    </ul>
                                 <!-- </div> -->
 
 
 
 
                             <?php else: ?>
-
+                             <li>
                                 <form method="post">
                                     <input class="book" type="submit" name="login_btn" value="Login">
                                     
                                 </form>
-
+                            </li>
                             <?php endif; ?>
                         
-                    </li>
+                    
 
 
                 </ul>
@@ -274,13 +270,13 @@ if (isset($_POST['book_now'])) {
         </div>
     </div>
 
-    <!-- <div class="intro" data-aos="fade-up">
-        <div class="hanuma">
-            <div class="room">
+    <!-- <div style="margin-top:-15%;z-index:-100;">
+        <div>
+            <div>
                 <h1 style=" color: purple;font-family: 'Times New Roman', Times, serif;background-color: orange;border-left: 3px solid blueviolet;border-top: 3px solid blueviolet;border-bottom: 3px solid blueviolet;font-size: 4vh">
                     ROOMS </h1>
             </div>
-            <div class="room-content">
+            <div>
                 <p>Eka Hotel rooms are designed to provide the highest levels of Comfort, Convenience and Eﬃciency. The
                     hotel has 167 air-conditioned rooms, of these 158 are Superior rooms, 2 rooms for guests with
                     special needs, 3 triple rooms, 1 Junior Suite and 3 Executive Suites. Guests staying in the Hotel

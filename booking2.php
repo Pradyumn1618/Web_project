@@ -28,13 +28,8 @@ if (isset($_POST['book_btn'])) {
   $r4 = $_POST['Count4'];
   $user = $_SESSION['Email'];
   if (!($r1 == 0 && $r2 == 0 && $r3 == 0 && $r4 == 0)) {
-    // $cancelbookid = "SELECT MAX(ID) as update_booking from Booking where user='$user'";
-    // $result = mysqli_query($con, $cancelbookid);
-    // $row = mysqli_fetch_assoc($result);
-    // $ID = $row['update_booking'];
-    // $update = "UPDATE Booking set `Room 1`='$r1',`Room 2`='$r2',`Room 3`='$r3',`Room 4`='$r4' where ID='$ID'";
-    $update="insert into Booking values";
-    $update.="('".$temp['Name']."',".$temp['Email']."',".$temp['checkin date']."',".$temp['checkout date']."',".$r1.",".$r2.",".$r3.",".$r4.",".$user.",".$temp['ID'].");";
+    $update="insert into Booking (`Name`, `Email`, `checkin date`, `checkout date`, `Room 1`, `Room 2`, `Room 3`, `Room 4`, `user`, `ID`) values";
+    $update.="('".$temp['Name']."','".$temp['Email']."','".$temp['checkin date']."','".$temp['checkout date']."',".$r1.",".$r2.",".$r3.",".$r4.",'".$user."','".$temp['ID']."');";
     if (mysqli_query($con, $update) === true) {
       echo "<script>alert('thanx for booking!')</script>";
       header("Location:thanx.php");
@@ -47,18 +42,7 @@ if (isset($_POST['book_btn'])) {
   }
 }
 if (isset($_POST['cancel'])) {
-  // $user = $_SESSION['Email'];
-  // $cancelbookid = "SELECT MAX(ID) as cancel_booking from Booking where user='$user'";
-  // $result = mysqli_query($con, $cancelbookid);
-  // $row = mysqli_fetch_assoc($result);
-  // $ID = $row['cancel_booking'];
-  // $cancel = "DELETE from Booking where ID='$ID'";
-  // $result2 = mysqli_query($con, $cancel);
-  // if ($result2) {
     header("Location:index.php");
-  // } else {
-  //   echo "unsuccessful";
-  // }
   unset($_POST['cancel']);
 }
 ?>
@@ -138,14 +122,7 @@ if (isset($_POST['cancel'])) {
     </form><br><br>
   </div>
   <?php
-  // $user = $_SESSION['Email'];
-  // $query = "SELECT MAX(ID) as update_booking from Booking where user='$user'";
-  // $result = mysqli_query($con, $query);
-  // $row = mysqli_fetch_assoc($result);
-  // $ID = $row['update_booking'];
-  // $query = "select `checkin date`,`checkout date` from Booking where ID='$ID';";
-  // $result = mysqli_query($con, $query);
-  // $row = mysqli_fetch_assoc($result);
+  
   $checkin = $temp['checkin date'];
   $checkout = $temp['checkout date'];
   $room1 = "select sum(`Room 1`) from Booking where `checkin date`<='$checkout' and `checkout date`>='$checkin';";
