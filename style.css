@@ -1,5 +1,6 @@
 body {
     background: rgba(255, 254, 254, 1);
+    margin: 0;
 }
 
 .header {
@@ -127,7 +128,11 @@ body {
 
 
 .logo {
+    /* display: ; */
     width: 30vw;
+    background-image: url(logo2.png);
+    background-size: 5% auto;
+    background-repeat: no-repeat;
 }
 
 .menu {
@@ -197,6 +202,16 @@ button {
     /* border-radius: 20px; */
     cursor: pointer;
 }
+@media screen and (max-width:700px){
+    body{
+        margin:0;
+        width:110%;
+    }
+       #logout{
+        padding:0.5vh;
+        font-size: 1vh;
+    }
+}
 
 #responsive {
     display: none;
@@ -251,7 +266,7 @@ p {
 
 .main {
     display: block;
-    height: 250vh;
+    height: auto;
     width: 100%;
     /* background-size: cover;
     background-position: 0px 0px; */
@@ -266,9 +281,13 @@ p {
     top: 40vh;
     background-color: rgba(206, 195, 195, 0.596);
 }
+@media screen and (max-width:700px){
+    .main{
+        width:100%;
+    }}
 .main_rooms{
     display: block;
-    height: 250vh;
+    height: auto;
     width: 100%;
     position: relative;
     color: black;
@@ -276,6 +295,7 @@ p {
     text-align: center;
     z-index: 1;
     background-color: rgba(206, 195, 195, 0.596);
+    /* overflow: hidden; */
 }
 
 
@@ -475,13 +495,13 @@ p {
     justify-content: center;
     padding: 80px 0;
     /*background-color: #f2f2f2;*/
-    height: auto;
-    width: 60%;
+    height: 95vh;
+    width: 55%;
     border: 8px solid whitesmoke;
     border-radius: 5px;
     z-index: 20;
-    background-color: rgba(116, 111, 93, 0.5);
-    /*box-shadow: 2px 2px 3px blueviolet;*/
+    background-color: rgba(116, 111, 93, 0.7);
+    box-shadow: 0px 0px 80px black;
 }
 
 @media screen and (max-width:700px) {
@@ -517,11 +537,12 @@ p {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    /* background-image: url("signup.webp"); */
+     background-image: linear-gradient(to right,rgba(256, 256, 256, 0.35)0%, rgba(0, 0, 0, 0.5)33%, rgba(0, 0, 0, 0.5)66%, rgba(256, 256, 256, 0.35)100%),url("login.png"); 
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
     width: 100%;
+    
 }
 
 input[type=text],
@@ -590,13 +611,14 @@ select {
     width: 85%;
     color: white;
     /* background-color: #0c192c; */
-    background-image: url(wood1.png);
+    background-image: url(Wood.png);
     background-size: cover;
     padding: 8vh;
     box-sizing: border-box;
     border-radius: 4vh;
     margin: auto;
     border-bottom: 5vh solid rgba(245, 245, 245, 0.445);
+    filter: brightness(90%);
 }
 
 .c3 {
@@ -620,6 +642,19 @@ select {
     border: 10px solid aliceblue;
     color: white;
     border-radius: 1vh;
+}
+@media screen and (max-width:1100px){
+    #contacts_header{
+        overflow-x: hidden;
+    }
+    .c2{
+        flex-direction: column;
+        width: 100%;
+        
+    }
+    .c3,.c4{
+        width:100%;
+    }
 }
 
 #links {
@@ -663,7 +698,7 @@ select {
     font-size: medium;
     height: auto;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-image: linear-gradient(to right, red 0%, #d88913 51%, rgb(233, 213, 37) 100%);
+    background-image: linear-gradient(to right, #D31027 0%, #EA384D  51%, #D31027  100%);
     color: whitesmoke;
     font-weight: 600;
     margin: auto;
@@ -682,10 +717,9 @@ select {
     height: auto;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 600;
-    color: yellow;
+    background-position: right center;
     margin: auto;
-    background-position: right center; 
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5), 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 }
 
 #buttonlogin :hover {
@@ -837,12 +871,6 @@ select {
 @media screen and (max-width:800px) {
     .a6 {
         margin-bottom: 8vh;
-    }
-}
-
-@media screen and (max-width:1100px){
-    .c4{
-        flex-direction: column;
     }
 }
 
@@ -1053,7 +1081,25 @@ q {
   .flipcard_image{
     width: 100%;
   }
-
+  @media screen and (max-width:1300px){
+    .flip-card{
+        width:70%;
+        height: 80vh;
+    }
+    .flipcard_image{
+        height: 70%;
+    }
+  }
+  @media screen and (max-width:850px){
+    .flip-card{
+        width:100%;
+    }
+}
+@media screen and (max-width:700px){
+    .flipcard_back_content{
+        font-size:2.5vh;
+    }
+}
   .b21{
     display: flex;
     flex-direction: column;
@@ -1129,3 +1175,5 @@ q {
     background-color: #3A3A38;
     color: #bbbbbb;
   }
+
+  

@@ -115,7 +115,7 @@
             <!-- Full-width slides/quotes -->
             <div class="mySlides">
             <p class="customer">
-                John Keats <br>
+                Alaister Jess <br>
                 <br> <b>Ratings:</b> <br>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
@@ -130,7 +130,7 @@
             </div>
 
             <div class="mySlides">
-                <p class="customer">Ernest Hemingway
+                <p class="customer">Ernest Spharlete
                 <br>
                 <br> <b>Ratings:</b> <br>
                 <span class="fa fa-star checked"></span>
@@ -143,7 +143,7 @@
             </div>
 
             <div class="mySlides">
-            <p class="customer">Thomas A. Edison
+            <p class="customer">Thomas Warner
                 <br>
                 <br> <b>Ratings:</b> <br>
                 <span class="fa fa-star checked"></span>
@@ -156,7 +156,7 @@
             </div>
 
             <div class="mySlides">
-            <p class="customer">Thomas A. Edison
+            <p class="customer">Joshua Greek
                 <br>
                 <br> <b>Ratings:</b> <br>
                 <span class="fa fa-star checked"></span>
