@@ -91,7 +91,7 @@ echo ' <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script
 <script>
 
 function showConfirmation() {
-    var result = confirm("Are you sure you want to cancel?");
+    var result = confirm("Are you sure you want to cancel the booking?");
     if (!result) {
         event.preventDefault();
     }

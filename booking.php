@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         function checkDate(){
             var checkin = new Date(document.getElementById("date1").value);
             var checkout = new Date(document.getElementById("date2").value);
-            if(checkout<=checkin){
+            if(checkout<checkin){
                 alert("Check-out date must after the Check-in date");
                 event.preventDefault();
             }

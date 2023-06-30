@@ -28,8 +28,8 @@ if (isset($_POST['book_btn'])) {
   $r4 = $_POST['Count4'];
   $user = $_SESSION['Email'];
   if (!($r1 == 0 && $r2 == 0 && $r3 == 0 && $r4 == 0)) {
-    $update="insert into Booking (`Name`, `Email`, `checkin date`, `checkout date`, `Room 1`, `Room 2`, `Room 3`, `Room 4`, `user`, `ID`) values";
-    $update.="('".$temp['Name']."','".$temp['Email']."','".$temp['checkin date']."','".$temp['checkout date']."',".$r1.",".$r2.",".$r3.",".$r4.",'".$user."','".$temp['ID']."');";
+    $update="insert into Booking (`Name`, `Email`, `checkin date`, `checkout date`, `Room 1`, `Room 2`, `Room 3`, `Room 4`, `user`) values";
+    $update.="('".$temp['Name']."','".$temp['Email']."','".$temp['checkin date']."','".$temp['checkout date']."',".$r1.",".$r2.",".$r3.",".$r4.",'".$user."');";
     if (mysqli_query($con, $update) === true) {
       echo "<script>alert('thanx for booking!')</script>";
       header("Location:thanx.php");
@@ -69,6 +69,11 @@ if (isset($_POST['cancel'])) {
         }
       }
     </script>
+    <style>
+      .total,#total,#total2,#total3{
+        font-weight: 600;
+      }
+      </style>
 
   </head>
   <div class="roombooking">
@@ -176,6 +181,7 @@ if (isset($_POST['cancel'])) {
     var room3ct = room3.value;
     var room4ct = room4.value;
     var diff=' . $diff->days . ';
+    if(diff==0)diff=1;
 
     // Update the display
     var total1 =document.getElementById("total").innerHTML=diff*(room1ct*5000+room2ct*10000+room3ct*15000+room4ct*20000)+ "/-";
@@ -191,11 +197,11 @@ if (isset($_POST['cancel'])) {
   var max1=document.getElementById("roomCount1");
   max1.max=100-' . $ct1 . ';
   var max2=document.getElementById("roomCount2");
-  max1.max=100-' . $ct2 . ';
+  max2.max=50-' . $ct2 . ';
   var max3=document.getElementById("roomCount3");
-  max1.max=100-' . $ct3 . ';
+  max3.max=26-' . $ct3 . ';
   var max4=document.getElementById("roomCount4");
-  max1.max=100-' . $ct4 . ';
+  max4.max=5-' . $ct4 . ';
   </script>';
   ?>
 
