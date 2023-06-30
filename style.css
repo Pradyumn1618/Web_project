@@ -246,34 +246,11 @@ p {
     font-family: 'Poppins', sans-serif;
 }
 
-
-/* @keyframes animatedBackground {
-    0% {
-        background-position: 0 0;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://c4.wallpaperflare.com/wallpaper/280/463/660/kurumba-maldives-tourism-pool-resort-wallpaper-preview.jpg");
-    }
-
-    50% {
-        background-position: -100% 0;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://c4.wallpaperflare.com/wallpaper/850/698/458/lankanfushi-island-vacation-travel-gili-lankanfushi-wallpaper-preview.jpg");
-    }
-
-    100% {
-        background-position: 100% 0;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1600");
-    }
-} */
-
 .main {
     display: block;
     height: auto;
     width: 100%;
-    /* background-size: cover;
-    background-position: 0px 0px; */
     position: relative;
-    /* background-repeat: repeat-y; */
-    /* animation: animatedBackground 10s linear infinite alternate; */
-    /*animation: slideshow 4s linear infinite alternate;*/
     color: black;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
@@ -1175,5 +1152,109 @@ q {
     background-color: #3A3A38;
     color: #bbbbbb;
   }
+
+  @media screen and (max-device-width:700px){
+    body{
+        margin:0;
+        width:110%;
+    }
+       #logout{
+        padding:0.5vh;
+        font-size: 1vh;
+    }
+    .main{
+        width:100%;
+    }
+    .box {
+        width: 100%;
+    }
+     .flipcard_back_content{
+        font-size:2.5vh;
+    }
+}
+@media screen and (max-device-width:900px) {
+
+    ul.navigation,
+    .main2 {
+        display: none;
+    }
+
+    #responsive {
+        display: inline-block;
+    }
+
+    .menu {
+        padding-left: 50vw;
+        justify-content: end;
+        align-items: end;
+        width: 15%;
+    }
+}
+
+
+@media screen and (max-device-width:1100px){
+    #contacts_header{
+        overflow-x: hidden;
+    }
+    .c2{
+        flex-direction: column;
+        width: 100%;
+        
+    }
+    .c3,.c4{
+        width:100%;
+    }
+    .menu {
+        width: 70%;
+    }
+}
+@media screen and (max-device-width:1300px) {
+    .a5 {
+        flex-direction: column;
+        height: auto;
+
+    }
+
+    .a6 {
+        width: 100%;
+        height: 15vh;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        margin-top: 0vh;
+
+        margin-bottom: 8vh;
+    }
+
+    .a1 {
+        width: 80vw;
+        height: 40vh;
+    }
+
+    .a6 p {
+
+        width: 50%;
+    }
+    .flip-card{
+        width:70%;
+        height: 80vh;
+    }
+    .flipcard_image{
+        height: 70%;
+    }
+
+}
+@media screen and (max-device-width:800px) {
+    .a6 {
+        margin-bottom: 8vh;
+    }
+}
+
+  @media screen and (max-device-width:850px){
+    .flip-card{
+        width:100%;
+    }
+}
+
 
   

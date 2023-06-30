@@ -42,7 +42,7 @@
                     <li><a class="dropdown-item" id="home" href="index.php">HOME</a></li>
                     <li><a class="dropdown-item" id="about" href="about.php">ABOUT</a></li>
                     <li><a class="dropdown-item" id="rooms" href="rooms.php">ROOMS</a></li>
-                    <li><a class="dropdown-item" id="reviews" href="reviews.php">REVIEWS</a></li>
+                    <!-- <li><a class="dropdown-item" id="reviews" href="reviews.php">REVIEWS</a></li> -->
                     <li><a class="dropdown-item" id="contact" href="contact.php">CONTACT</a></li>
                     <!--<li><i class="fa fa-search"></i></li>-->
                     <li>

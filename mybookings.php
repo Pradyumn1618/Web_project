@@ -127,6 +127,14 @@ function showConfirmation() {
         padding: 10px 10px;
        border-radius: 1px;
     }
+    @media screen and (max-width:700px){
+        table{
+            overflow: scroll;
+        }
+        tr,td,th{
+            font-size: 1.5vh;
+        }
+    }
     @media screen and (max-device-width:700px){
         table{
             overflow: scroll;
