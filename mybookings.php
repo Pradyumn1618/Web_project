@@ -85,7 +85,7 @@ echo '<p style="font-size:3vh;">NO BOOKING FOUND</p>';
 echo '</div><br><br><br>';
 
 }
-echo '<div style="display:flex;justify-content:center;background-image: linear-gradient(to right, red 0%, orange 50%, yellow 100%)" data-aos="fade-up"><a href="index.php">Back to Home</a></div>';
+echo '<div style="display:flex;justify-content:center;background-image: linear-gradient(to right, red 0%, orange 50%, yellow 100%)"><a href="index.php">Back to Home</a></div>';
 echo ' <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>

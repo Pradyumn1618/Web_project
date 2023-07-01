@@ -31,8 +31,8 @@ if (isset($_POST['book_btn'])) {
     $update="insert into Booking (`Name`, `Email`, `checkin date`, `checkout date`, `Room 1`, `Room 2`, `Room 3`, `Room 4`, `user`) values";
     $update.="('".$temp['Name']."','".$temp['Email']."','".$temp['checkin date']."','".$temp['checkout date']."',".$r1.",".$r2.",".$r3.",".$r4.",'".$user."');";
     if (mysqli_query($con, $update) === true) {
-      echo "<script>alert('thanx for booking!')</script>";
-      header("Location:thanx.php");
+      // echo "<script>alert('thanx for booking!')</script>";
+      header("Location:confirmation.html");
     }
   } else {
     echo '<div class="alert alert-danger alert-dismissible fade show" roll="alert">
@@ -73,7 +73,7 @@ if (isset($_POST['cancel'])) {
       .total,#total,#total2,#total3{
         font-weight: 600;
       }
-      </style>
+      </style>   
 
   </head>
   <div class="roombooking">
@@ -204,7 +204,6 @@ if (isset($_POST['cancel'])) {
   max4.max=5-' . $ct4 . ';
   </script>';
   ?>
-
 
   <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
