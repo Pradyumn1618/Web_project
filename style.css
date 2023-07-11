@@ -521,7 +521,11 @@ p {
     width: 100%;
     
 }
-
+.sign1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 input[type=text],
 select {
