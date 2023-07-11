@@ -29,7 +29,10 @@ if (isset($_SESSION['user_not_found'])) {
 if (isset($_POST['login_btn'])) {
     $email = mysqli_real_escape_string($con,$_POST['Email']);
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        die("Invalid email address");
+        echo '<div class="alert alert-danger alert-dismissible fade show" roll="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <strong>Invalid email address</strong>
+      </div>';
     }
     
     $password = $_POST['Password'];
@@ -122,7 +125,7 @@ echo ' <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script
                 <label for="Email" style="color: white;font-size:2.5vh"> Enter Email: </label>
                 <input id="text" type="text" name="Email" placeholder="Your email.." required><br><br>
                 <label for="Password" style="color: white;font-size:2.5vh"> Enter Password: </label>
-                <input id="password" type="password" name="Password" placeholder="Password.." required><br><br>
+                <input id="password" type="password" name="Password" placeholder="Password.." autocomplete="off"required><br><br>
                 <span id="togglePassword" class="toggle-password" onclick="togglePasswordVisibility()">SHOW</span>
 
                 <input id="button" type="submit" value="LOGIN" name="login_btn" class="buttonlogin">

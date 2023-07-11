@@ -16,5 +16,8 @@ function check_login($con) {
     
     return false; // User not logged in
 }
+function generateRandomToken(){
+    return rand(100000,999999);
+}
 ?>
 
