@@ -126,20 +126,10 @@ body {
     background-color: #a1351a5b;
 }
 
-
-.logo {
-    /* display: ; */
-    width: 30vw;
-    background-image: url(logo2.png);
-    background-size: 5% auto;
-    background-repeat: no-repeat;
-}
-
 .menu {
     justify-content: space-evenly;
     width: 50vw;
-    /* margin: auto;
-    align-content: flex-end; */
+   
 }
 
 a {
