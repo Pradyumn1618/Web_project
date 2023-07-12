@@ -1,22 +1,17 @@
 <?php
-// session_start();
+session_start();
 include("functions.php");
 include("connection.php");
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-// $logged = check_login($con);
-// //echo $logged ? 'true' : 'false';
-// if (!$logged){
-//     header("Location:login.php");
-// }
+
+if(!isset($_SESSION['forgot_email']))header("Location:forgot.php");
 $email;
 if (isset($_POST['reset'])) {
-    
+    $token = $_GET['token'];
+    if($token){
     if($_POST['Password']=$_POST['Password1']){
         $password = $_POST['Password'];
-    $token = $_GET['token'];
-        $query="select Email from Users where token='$token'";
+    
+        $query="select Email from Users where token='$token';";
         $result=mysqli_query($con,$query);
         if(!$result){
             echo '<div class="alert alert-danger alert-dismissible fade show" roll="alert">
@@ -30,7 +25,8 @@ if (isset($_POST['reset'])) {
             $email=$row['Email'];
          }
         if ($email) {
-            $query="update Users set Password='$password' token='NULL' where Email='$email';";
+            $zero=0;
+            $query="update Users set Password='$password', token='$zero' where Email='$email';";
             $result=mysqli_query($con,$query);
                 if(!$result){
                     echo '<div class="alert alert-danger alert-dismissible fade show" roll="alert">
@@ -50,6 +46,13 @@ if (isset($_POST['reset'])) {
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
             <strong>Confirm password does not match with password!</strong>
           </div>';
+        }}
+        else{
+            echo '<div class="alert alert-danger alert-dismissible fade show" roll="alert">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <strong>There was an error in fetching the token!</strong>
+          </div>';
+          echo "<script>setTimeout(function(){window.location='forgot.php';}, 2000);</script>";
         }
     } 
     echo "<script>

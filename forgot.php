@@ -1,4 +1,5 @@
 <?php
+session_start();
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -11,10 +12,22 @@ require '/opt/lampp/htdocs/phpEmail/PHPMailer/src/Exception.php';
 require '/opt/lampp/htdocs/phpEmail/PHPMailer/src/PHPMailer.php';
 require '/opt/lampp/htdocs/phpEmail/PHPMailer/src/SMTP.php';
 
+if (isset($_SESSION['user_not_found'])) {
+    echo '<div class="alert alert-danger alert-dismissible fade show" roll="alert">
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    <strong> User not found! </strong>
+  </div>';
+    unset($_SESSION['user_not_found']);
+}
+
+
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $email = $_POST['Email'];
+    $query = "select * from Users where Email='$email' limit 1";
+        $result = mysqli_query($con, $query);
 
-    echo '<script>console.log("hii");</script>';
+
+        if ($result && mysqli_num_rows($result) > 0) {
     $token = generateRandomToken(); 
     $query="update Users set token='$token' where Email='$email'";
     $result=mysqli_query($con,$query);
@@ -38,7 +51,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     <strong> Reset link has been sent to your email!</strong>
   </div>';
+  $_SESSION['forgot_email']="$email";
   unset($_POST['submit']);
+}else{
+    $_SESSION['user_not_found'] = true;
+    header("Location:forgot.php");
+}
 }
 echo "<script>
 const element=document.querySelector('.alert');

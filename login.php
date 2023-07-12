@@ -134,7 +134,7 @@ echo ' <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script
                 <button onclick="cancel()" type="button" id="cancelAlert" class="buttonlogin" data-dismiss="modal">Cancel</button>
 
 
-
+                <a href="forgot.php" style="color:blue;font-size:2vh">Forgot Password</a><br>
                 <a href="signup.php" style="color:blue;font-size:2vh">New user?Register here!</a><br><br>
             </form>
 
