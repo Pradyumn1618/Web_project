@@ -1,1 +1,1 @@
-This is a hotel room booking website. Currently hosted on localhost and is using phpmyadmin database. The logins, bookings won't work without the database....so I am uploading a screen recording of how it works.
+This is a hotel room booking website. Currently hosted on localhost and is using phpmyadmin database.
