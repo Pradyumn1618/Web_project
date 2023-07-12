@@ -1,9 +1,16 @@
 <?php
-include("functions.php");
-include("connection.php");
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+include("functions.php");
+include("connection.php");
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require '/opt/lampp/htdocs/phpEmail/PHPMailer/src/Exception.php';
+require '/opt/lampp/htdocs/phpEmail/PHPMailer/src/PHPMailer.php';
+require '/opt/lampp/htdocs/phpEmail/PHPMailer/src/SMTP.php';
+
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $email = $_POST['Email'];
 
@@ -13,10 +20,20 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $result=mysqli_query($con,$query);
     $resetLink = "http://localhost/Web_project/reset.php?token=" . $token;
     $message = "Click the following link to reset your password: " . $resetLink;
-    $subject = "Password Reset";
-    $headers = "From: pradyumnkangule@gmail.com";
-    mail($email, $subject, $message, $headers); 
-
+    $mail = new PHPMailer(true);
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'pradyumnkangule@gmail.com';
+    $mail->Password = 'iukhevxqejaznvno';
+    $mail->Port = 465;
+    $mail->SMTPSecure = 'ssl';
+    $mail->isHTML(true);
+    $mail->setFrom('pradyumnkangule@gmail.com');
+    $mail->addAddress("$email");
+    $mail->Subject = ('Password Reset');
+    $mail->Body = $message;
+    $mail->send();
     echo '<div class="alert alert-info alert-dismissible fade show" roll="alert">
     <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     <strong> Reset link has been sent to your email!</strong>
